@@ -1,0 +1,159 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+.top{
+    height: 60px;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.banner{
+    width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+}
+.ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+li{
+    border-right: 1px solid #f8f8f8;
+    padding: 0 10px;
+
+    }
+.right{
+    display: flex;
+    align-items: center;
+
+}
+.concent{
+    width: 1200px;  
+    margin: auto; 
+}
+.to{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.mi{
+    width: 80px;
+    height: 80px;
+}
+.fenlei{
+    display: flex;
+    align-items: center;
+     justify-content: space-around;
+    margin-right: 50px;
+}
+.search{
+    width: 150px;
+    height: 40px;
+     display: flex;
+}
+.input{
+    width: 75%;
+    height: 100%;
+    outline: 0;
+    border: 1px solid #999;
+    text-indent: 1em;
+}
+.btn{
+    flex: 1;
+    outline: 0;
+    border: 1px solid #999;
+}
+.container{
+    width: 100%;
+    background-color: #f3f3f3;
+    height: 40px;
+    line-height: 40px;
+}
+.sy{
+    width: 1200px;
+    margin: auto;
+    font-size: 12px;
+    color: #999;
+}
+i{
+    margin: 0 10px;
+}
+.shouji{
+    width: 1200px;
+    margin: auto;
+}
+.ul3{
+    width: 1200px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+.li{
+    width: 20%;
+    border: 1px solid #f9f9f9;
+    text-align: center;
+    padding: 20px 0;
+}
+.shouji-img{
+    width: 100px;
+    height: 100px;
+}
+h3{
+    color: #ff6a07;
+    margin: 20px;
+}
+.bot-ul{
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+.bot-li{
+    width: 20%;
+    text-align: center;
+    border-right: 1px solid #eee;
+}
+.bottom-box{
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+.left1{
+    width: 800px;
+}
+.bottom-ul{
+    width: 100%;
+}
+td{
+    text-align: center;
+}
+.right1{
+    width: 400px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    height: 200px;
+}
+.dian{
+    color: #ff6a07;
+}
+.kefu{
+    width: 200px;
+    border: 1px solid #ff6a07;
+    height: 40px;
+    background-color: #fff;
+}
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // new map 对象
+        let obj={
+            name:'小工',
+            title:'985'
+        }
+        
+        const map=new Map([
+            ['name','zhangsan'],
+            ['title','985'],
+            ['titles','985'],
+            ['titless','985'],
+        ])
+        map.set('[1,2,3]','dddd');
+        console.log(map.get('name'));
+        console.log(map.set('1111','5555'));
+        console.log( map.has('title'));
+        // 判断长度的
+        console.log(map.size);
+        // 对象删除用delete
+        console.log(map.delete ('title'));
+
+
+
+        // new set数组 本质是一个构造函数
+        let array=[1,5,8,6,12,4,8,1,6,8]
+        let arr=[...new Set([1,5,8,6,12,4,8,1,6,8])]
+        let arr1=new Set([1,5,8,6,12,4,8,1,6,8])
+
+        // 获取元素个数set size
+        console.log(arr);
+        // ...展开运算符 变成数组
+        console.log(arr1);
+        // arr1 没有长度   是一个伪数组
+        console.log(array);
+ 
+
+
+        // class类
+        // 传统es5中是这样写的
+        function Pina(x,y){
+            this.x=x;
+            this.y=y
+        }
+        Pina.prototype.toString=function(){
+            return '('+ this.x +','+ this.y+')'
+        }
+        var p=new Pina(1,2)
+        console.log(p);
+
+        // 这是class类的封装class
+        class Pina1{
+            constructor(x,y){
+                this.x=x;
+                this.y=y;
+            }
+            toString () {
+            return '('+this.x+','+this.y+')'
+            }
+        }
+       
+        var p1=new Pina(1,2)
+        console.log(p1);
+
+
+        // 对象合并 用Object.assign
+        let obj1={name:'111'}
+        let obj2={names:'111'}
+        Object.assign(obj1,obj2)
+        console.log(obj1);
+    </script>
+</body>
+</html>

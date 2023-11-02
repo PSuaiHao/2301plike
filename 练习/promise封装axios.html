@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    // axios底层是基于什么封装的  是基于XMLHttpRequest()
+    // promise底层是基于什么封装的   也是基于XMLHttpRequest()
+    // promose函数中的.then方法返回的是一个promise对象
+
+    // 1.创建对象，创建链接XMLHttpRequest
+    const xhr=new XMLHttpRequest()
+    // 2.确定请求方法
+    xhr.open('get','http://baidu.com')
+    // 3.传递参数，发送请求
+    xhr.send()
+    // 4.绑定事件，处理响应结果
+    xhr.onreadystatechange=function(){
+        // 判断  等于4表示成功建立请求链接
+        if(xhr.readyState===4){
+            // 判断响应状态码 200-299
+            if(xhr.status>=200&&xhr.status<300){
+                // 表示成功
+                resolve(xhr.response)
+            }else{
+                // 表示失败
+                reject(xhr.status)
+            }
+        }
+    }
+</script>
+</html>
