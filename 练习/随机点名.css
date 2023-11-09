@@ -2,7 +2,9 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    list-style: none;
 }
+
 body{
     width: 100vw;
     height: 100vh;
@@ -12,16 +14,26 @@ body{
 }
 h1{
     text-align: center;
-    margin-bottom: 300px;
+    margin-bottom: 30px;
 }
-tr{
-    line-height: 40px;
+ul{
+    width: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 20px;
 }
-td{
-    background: linear-gradient(to right,#0000ff,#ff0000,#00ff00,#f13174);
+li{
+    width: 20%;
+    margin-top: 15px;
+    /* background: linear-gradient(to right,#0000ff,#ff0000,#00ff00,#f13174); */
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+p{
+    color: #fff;
+    text-align: right;
+    margin-bottom: 200px;
 }
 button{
     border: 0;
@@ -35,22 +47,19 @@ button{
     display: flex;
     align-items: center;
 }
-table{
-    margin-right: 100px;
-}
 .box1{
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
+.box2{
+    line-height: 50px;
+    font-size: 26px;
+}
 .dan{
-    display: inline-block;
     width: 200px;
    height: 36px;
-   margin-left: 100px;
-   text-align: center;
-   line-height: 36px;
-   background-color: #f13174;
-   vertical-align: middle;
-
+   background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

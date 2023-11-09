@@ -8,64 +8,28 @@
 </head>
 <body >
     <h1>2301C点名表</h1>
+    <p></p>
     <div class="box">
-        <table border="0" cellspacing="0" width="600px">
-            <tr>
-             <td >张三</td>
-             <td>李四</td>
-             <td>王五</td>
-             <td>赵六</td>
-             <td>麻七</td>
-            </tr>
-            <tr>
-             <td>貂蝉</td>
-             <td>杨玉环</td>
-             <td>王昭君</td>
-             <td>西施</td>
-             <td>嫦娥</td>
-            </tr>
-            <tr>
-             <td>杨戬</td>
-             <td>后羿</td>
-             <td>诸葛亮</td>
-             <td>鲁班7号</td>
-             <td>孙悟空</td>
-            </tr>
-            <tr>
-             <td>林冲</td>
-             <td>鲁智深</td>
-             <td>武松</td>
-             <td>百秀莲</td>
-             <td>孙二娘</td>
-            </tr>
-            <tr>
-             <td>贾宝玉</td>
-             <td>林黛玉</td>
-             <td>薛宝钗</td>
-             <td>王熙凤</td>
-             <td>秦可卿</td>
-            </tr>
-             
-         </table>
+        <ul>
+        </ul>
          <div class="box-right">
-            <div class="box1">
-            
+            <div class="box1">           
                 <div>
-                    <button id="aa">单人点名</button>
+                    <button onclick="handlerOne()" name="One">单人点名</button>
                 </div>
                 <div>
-                    <button id="shuan">双人点名</button>
+                    <button onclick="handleTwo()" name="Two">双人点名</button>
                 </div>
                 <div>
-                    <button id="nan">男生点名</button>
+                    <button onclick="handleMen()" name="Man">男生点名</button>
                    
                 </div>
                 <div>
-                    <button id="nv">女生点名</button>
+                    <button onclick="handleWomen()" name="Wuman">女生点名</button>
                 </div>
             </div>
             <div class="box2">
-                <span class="dan"></span>
+               天选之人： <span class="dan"></span>
             </div>
          </div>
        
