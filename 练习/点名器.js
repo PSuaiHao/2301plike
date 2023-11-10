@@ -154,10 +154,14 @@ function handleTwo() {
         endClearInterval()
         let index = randomName(newArray)
         let i = randomName(newArray)
+        if(index==i){
+            index = randomName(newArray)
+            i = randomName(newArray)
+        }
         let oneid = newArray[index].id
         let twoid = newArray[i].id
         dan.style.backgroundImage = randomColor()
-        dan.innerText = arr[index].name + ',' + arr[i].name
+        dan.innerText = newArray[index].name + ',' + newArray[i].name
         let filterarr = newArray.filter(item => item.id != oneid).filter(item => item.id != twoid)
         newArray = filterarr
     }
