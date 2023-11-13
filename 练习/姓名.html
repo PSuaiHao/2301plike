@@ -1,35 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./js/vue.min.js"></script>
+    <script src="./js//vue.js"></script>
 </head>
+
 <body>
     <div id="app">
-
-        <p>姓：<input type="text" v-model="xing"></p>
-        <p>名：<input type="text" v-model="ming"></p>
-        <p>姓名：<input type="text"></p>
-        
-
+        <input type="text" placeholder="姓" v-model="obj.xing"> <br />
+        <input type="text" placeholder="名" v-model="obj.ming"> <br />
+        <input type="text" placeholder="姓名" v-model="san">
     </div>
-    <script>
-        new Vue({
-            el:'#app',
-            data:{
-                xing:'',
-                ming:'',
-                name:''
-            },
-            watch:{
-                  name:{
-                    deep:true,
-                    
-                  }
-            }
-        })
-    </script>
 </body>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            obj: {
+                xing: '',
+                ming: '',
+            },
+            san: ''
+        },
+        methods: {
+            dd() {
+                //  this.san=this.xing+'-'+this.ming
+            },
+
+        },
+        // computed: {
+        //   name:{
+        //     get(){
+        //         return this.xing +'-'+this.ming
+        //     },
+        //     set(val){
+        //       let [a,b]=val.split('-')
+        //       this.xing=a
+        //       this.ming=b
+
+        //     }
+        //   }
+        // },
+        watch: {
+            obj: {
+                deep: true,
+                handler(newVal, oldVal) {
+                    console.log(newVal);
+                    this.san = newVal.xing + '-' + newVal.ming
+                },
+            },
+            san:{
+                handler(val){
+                    console.log(val);
+                    let [a,b]=val.split('-')
+                    this.obj.xing=a
+                    this.obj.ming=b
+                }
+            }
+        },
+    })
+</script>
+
 </html>
