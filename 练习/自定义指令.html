@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>当前得值：<span v-text="n"></span></p>
+        <p>放大十倍得值：<span v-big="n"></span></p>
+        <input type="text" v-fbind:value="n">
+        <button @click="n++">点我试试</button>
+    </div>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                n:2
+            },
+            directives:{
+                big(element,binding){
+                    console.log(element,'----------',binding,'===========');
+                    element.innerText=binding.value*10
+                },
+
+
+                fbind:{
+                    bind(element,binding){
+                        console.log(element,'111111111',binding,'===========');
+                        element.value=binding.value
+                    },
+                    inserted(element,binding){
+                        element.focus()
+                        console.log(element,'222222222',binding,'===========');
+                    },
+                    update(element,binding){
+                        console.log(element,'333333333',binding,'===========');
+                        element.value=binding.value
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>
