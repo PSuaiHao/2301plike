@@ -2,14 +2,9 @@
   <div class="home">
     <el-container>
       <el-aside width="200px">
-       
-        <el-menu 
-        default-active="$route.path" 
-        class="el-menu-vertical-demo" 
-          background-color="#000" 
-          text-color="#fff" 
-          active-text-color="#ffd04b" 
-          router>
+
+        <el-menu default-active="$route.path" class="el-menu-vertical-demo" background-color="#000" text-color="#fff"
+          active-text-color="#ffd04b" router>
           <h2 class="b">HAPPY</h2>
           <h2>MMALL</h2>
           <el-menu-item index="hpage">
@@ -23,9 +18,9 @@
               <span>商品</span>
             </template>
             <el-menu-item-group>
-          <el-menu-item index="product">商品管理</el-menu-item>
-          <el-menu-item index="category">品类管理</el-menu-item>
-        </el-menu-item-group>
+              <el-menu-item index="product">商品管理</el-menu-item>
+              <el-menu-item index="category">品类管理</el-menu-item>
+            </el-menu-item-group>
           </el-submenu>
 
           <el-submenu index="">
@@ -34,8 +29,8 @@
               <span>订单</span>
             </template>
             <el-menu-item-group>
-          <el-menu-item index="order">订单管理</el-menu-item>
-        </el-menu-item-group>
+              <el-menu-item index="order">订单管理</el-menu-item>
+            </el-menu-item-group>
           </el-submenu>
 
           <el-submenu index="4">
@@ -44,8 +39,8 @@
               <span>用户</span>
             </template>
             <el-menu-item-group>
-          <el-menu-item index="user">用户列表</el-menu-item>
-        </el-menu-item-group>
+              <el-menu-item index="user">用户列表</el-menu-item>
+            </el-menu-item-group>
           </el-submenu>
         </el-menu>
 
@@ -57,7 +52,7 @@
           <p>欢迎，</p>
 
           <div class="name">
-            {{ user.username }}
+            {{ userInfo.username }}
           </div>
           <el-dropdown @command="handleCommand">
             <span class="el-dropdown-link">
@@ -81,12 +76,12 @@
 export default {
   data() {
     return {
-      user: JSON.parse(localStorage.getItem('token')) || {}
+      userInfo: JSON.parse(localStorage.getItem('userInfo')) || {}
     };
   },
   methods: {
     handleCommand() {
-      localStorage.removeItem('token')
+      localStorage.removeItem('userInfo')
       this.$router.push('/login')
     }
   },
@@ -99,13 +94,15 @@ export default {
   color: #fff;
   height: 100vh;
   padding-top: 40px;
-  h2{
+
+  h2 {
     padding-left: 20px;
     font-size: 30px;
   }
- .b{
-  color: #2dafcb;
- }
+
+  .b {
+    color: #2dafcb;
+  }
 }
 
 .el-header {

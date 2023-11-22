@@ -53,20 +53,33 @@ ul{
     li{
         width: 30%;
         background-color: #f0b45e;
-        padding: 40px 0;
+        padding: 50px 0;
         color: #fff;
         text-align: center;
+        margin: 0 10px;
         h1{
             font-size: 34px;
             font-weight: normal;
             margin-bottom: 20px;
         }
-        &:nth-child(2){
+        &:nth-of-type(2){
             background-color: #6bbe6b;
         }
-        &:nth-child(3){
+        &:nth-of-type(3){
             background-color: #5db8d3;
         }
+        &:hover{
+            transform: scale(1.1);
+            background-color: #f0ad4e;
+            color: #000;
+        }
     }
+    & li:nth-of-type(2):hover{
+        background-color: #5cb85c;
+    }
+    & li:nth-of-type(3):hover{
+        background-color: #4cb1cf;
+    }
+    
 }
 </style>

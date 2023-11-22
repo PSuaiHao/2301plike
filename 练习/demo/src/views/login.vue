@@ -9,14 +9,14 @@
                 <el-input v-model="ruleForm.password" show-password></el-input>
             </el-form-item>
             <el-form-item>
-                <el-button class="btn" type="primary" @click="submitForm('ruleForm')" >登录</el-button>
+                <el-button class="btn" type="primary" @click="submitForm('ruleForm')">登录</el-button>
             </el-form-item>
         </el-form>
     </div>
 </template>
 
 <script>
-import {querylogin} from '../api/http';
+import { querylogin } from '../api/http';
 export default {
     data() {
         return {
@@ -38,20 +38,20 @@ export default {
     },
     methods: {
         submitForm(formName) {
-        this.$refs[formName].validate((valid) => {
-          if (valid) {
-              querylogin({...this.ruleForm}).then(res=>{
-                console.log(res.data);
-                localStorage.setItem('token',JSON.stringify(res.data.data))
-                this.$router.push('/')
-              })
-          } else {
-            console.log('error submit!!');
-            return false;
-          }
-        });
-      },
-     
+            this.$refs[formName].validate((valid) => {
+                if (valid) {
+                    querylogin({ ...this.ruleForm }).then(res => {
+                        console.log(res.data);
+                        localStorage.setItem('userInfo', JSON.stringify(res.data.data))
+                        this.$router.push('/')
+                    })
+                } else {
+                    console.log('error submit!!');
+                    return false;
+                }
+            });
+        },
+
     },
 };
 </script>
@@ -67,16 +67,18 @@ export default {
 
     .demo-ruleForm {
         padding: 20px;
-        width:40%;
+        width: 40%;
         background-color: #fff;
         box-shadow: 2px 2px 2px #fff;
-        h2{
+
+        h2 {
             margin-bottom: 20px;
             font-weight: normal;
         }
-       .btn{
-        width: 100%;
-       }
+
+        .btn {
+            width: 100%;
+        }
     }
 }
 </style>
