@@ -73,6 +73,7 @@
 
     <router-link to="/akali">儿子</router-link>
     <hr/>
+    
     <router-view></router-view>
     
 

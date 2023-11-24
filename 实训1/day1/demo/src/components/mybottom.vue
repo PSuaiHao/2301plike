@@ -11,26 +11,28 @@
 </template>
 
 <script>
+import { mapState,mapMutations,mapGetters } from 'vuex';
 export default {
-props:['list','num'],
  data() {
      return {};
  },
  methods: {
+    ...mapMutations(['delchecked']),
     clearlist(){
-        this.$emit('clearlist')
+        this.delchecked()
     }
  },
  computed:{
+    ...mapState(['list']),
+    ...mapGetters(['num']),
     fqx:{
-        get(){
-                return this.list.every(item=>item.flag)
-        },
-        set(val){
-            console.log(val);
-            this.list.forEach((item) => item.flag=val)
-        }
-    }
+      get(){
+              return this.list.filter(item=>item.flag).length==this.list.length
+      },
+      set(val){
+          this.list.forEach((item) => item.flag=val)
+      }
+  }
  }
 };
 </script>

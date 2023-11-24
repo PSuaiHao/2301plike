@@ -5,15 +5,30 @@
 </template>
 
 <script>
+import {mapMutations, mapState } from 'vuex';
 export default {
  data() {
      return {
         txt:''
      };
  },
+ computed:{
+    ...mapState(['list'])
+
+ },
  methods: {
+    ...mapMutations(['setadd']),
     add(){
-        this.$emit('add',this.txt)
+        if(this.txt && this.txt!='null'){
+            if(!this.list.find(item=>item.txt==this.txt)){
+                this.setadd(this.txt)
+            }else{
+                alert('已经存在')
+            }
+            
+        }else{
+            alert('不能为空或不能为null')
+        }        
         this.txt=''
     }
  },

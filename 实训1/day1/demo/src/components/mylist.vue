@@ -13,16 +13,20 @@
 </template>
 
 <script>
+import { mapState,mapMutations } from 'vuex';
 export default {
-props: ['list'],
     data() {
         return {};
     },
     methods: {
+        ...mapMutations(['handldel']),
        del(i){
-        this.$emit('del',i)
+       this.handldel(i)
        }
     },
+    computed:{
+        ...mapState(['list'])
+    }
 
 };
 </script>
@@ -30,6 +34,7 @@ props: ['list'],
 <style lang="scss" scoped>
 ul{
     width: 100%;
+    border: 1px solid #999;
     li{
         width: 100%;
         display: flex;
@@ -37,7 +42,8 @@ ul{
         justify-content: space-between;
         padding: 0 10px;
         height: 50px;
-        border: 1px solid #999;
+        border-bottom: 1px solid #999;
+       
         span{
             margin-left: 10px;
         }
@@ -56,6 +62,9 @@ ul{
             button{
                 display: block;
             }
+        }
+        &:last-child{
+            border: 0;
         }
     }
 
